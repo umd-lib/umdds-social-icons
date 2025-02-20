@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * umdds-social-icons template
+ *
+ * Variables:
+ *   - icons
+ *   - block_heading
+ */
+#}
+<div class="s-stack-large" aria-labelledby="stay-connected-heading">
+    <p class="t-title-small c-content-dark-secondary s-stack-default" id="stay-connected-heading">
+       {{ block_heading }} 
+    </p>
+    <ul class="social-media-list s-box-default-h">
+      {% for icon in icons %}
+        <li class="s-stack-small s-inline-small">
+          {{ icon }}
+        </li>
+      {% endfor %}
+    </ul>
+</div>

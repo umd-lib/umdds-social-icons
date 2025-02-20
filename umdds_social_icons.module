@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Module file for umdds_social_icons module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function umdds_social_icons_theme() {
+  return [
+    'umdds_social_icons' => [
+      'variables' => [
+        'icons' => '',
+        'block_heading' => '',
+      ],
+    ],
+    'umdds_social_icons_facebook' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_instagram' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_youtube' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_muskweb' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+  ];
+}

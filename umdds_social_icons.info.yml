@@ -1,0 +1,7 @@
+name: UMD Design System Social Icons
+description: Customizable social media icons intended for UMDDS Libraries footer social media slot.
+
+package: 'UMDDS'
+type: module
+
+core_version_requirement: ^11
