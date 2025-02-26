@@ -31,6 +31,36 @@ function umdds_social_icons_theme() {
         'url' => '',
       ],
     ],
+    'umdds_social_icons_pinterest' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_tumblr' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_bluesky' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_wordpress' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_threads' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
+    'umdds_social_icons_mastodon' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
     'umdds_social_icons_muskweb' => [
       'variables' => [
         'url' => '',
