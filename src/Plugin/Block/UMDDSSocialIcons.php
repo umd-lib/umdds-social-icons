@@ -124,7 +124,7 @@ class UMDDSSocialIcons extends BlockBase {
       '#type' => 'textfield',
       '#title' => t('X URL'),
       '#default_value' =>  !empty($config['muskweb_url']) ? $config['muskweb_url'] : null,
-      '#description' => t('There are many alternative social networks with similar functionality to X that do not welcome and foster hate speech. Consider using BlueSky or Mastadon instead.'),
+      '#description' => t('Consider BlueSky or Mastadon as alternatives to X, which offer similar functionality.'),
     ];
     return $form;
   }
