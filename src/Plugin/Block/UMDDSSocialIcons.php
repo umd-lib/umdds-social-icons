@@ -152,7 +152,7 @@ class UMDDSSocialIcons extends BlockBase {
     $form['core_services']['wordpress_url'] = [
       '#type' => 'textfield',
       '#title' => t('Wordpress URL'),
-      '#default_value' =>  !empty($config['instagram_url']) ? $config['instagram_url'] : null,
+      '#default_value' =>  !empty($config['wordpress_url']) ? $config['wordpress_url'] : null,
     ];
     $form['core_services']['youtube_url'] = [
       '#type' => 'textfield',
