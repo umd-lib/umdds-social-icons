@@ -1,1 +1,64 @@
 /* Social Icons CSS */
+.social-media-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+ul.social-media-list li {
+  margin-bottom: 0rem;
+}
+
+.social-media-list-item {
+  display: flex;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* center social icon */
+.social-media-list-item img,
+.social-media-list-item svg {
+  margin: auto;
+}
+
+/* accessibility */
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* icon animation */
+.ani-icon-interactive {
+}
+
+.ani-icon-interactive:hover path,
+.ani-icon-interactive:focus path {
+  fill: #454545 !important;
+}
+
+.ani-icon-interactive:hover path#white,
+.ani-icon-interactive:focus path#white {
+  fill: #ffffff !important;
+}
+
+.ani-bg-interactive {
+  transition: background 0.5s, border 0.5s, color 0.5s;
+}
+
+.c-bg-interactive-dark-primary {
+  background-color: #242424;
+}
+
+.c-bg-interactive-dark-primary:hover,
+.c-bg-interactive-dark-primary:focus {
+  background-color: #e6e6e6;
+}
