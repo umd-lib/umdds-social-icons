@@ -1,8 +1,13 @@
 {
-    "name": "umd-lib/umdds-social-icons",
-    "description": "Customizable social media icons intended for UMDDS Lib footer social media slot.",
+    "name": "umd-lib/umdds_social_icons",
+    "description": "This Drupal module provides social media icons for the UMD Libraries Design System Theme",
     "type": "drupal-module",
-    "license": "Apache2",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "UMD Libraries"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {}
 }
