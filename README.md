@@ -8,7 +8,11 @@ slot but could be used elsewhere.
 
 ## Installation Instructions
 
-*Pending*
+Clone this repo into your modules/custom/ directory or install with composer:
+
+```bash
+composer require umd-lib/umdds_social_icons
+```
 
 ## Module Features
 
