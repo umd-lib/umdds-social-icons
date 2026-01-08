@@ -98,10 +98,20 @@ class UMDDSSocialIcons extends BlockBase {
       $icons[] = \Drupal::service('renderer')->render($render_arr);
     }
 
+    $use_all_accounts_link = !empty($blockConfig['use_all_accounts_link']);
+    $all_accounts_link_text = !empty($blockConfig['all_accounts_link_text']) ? $blockConfig['all_accounts_link_text'] : t('View All Social Media');
+    $all_accounts_link_url = !empty($blockConfig['all_accounts_link_url']) ? $blockConfig['all_accounts_link_url'] : '';
+
+    $standalone_page_content = !empty($blockConfig['standalone_page_content']);
+
+
     return [
       '#theme' => 'umdds_social_icons',
       '#icons' => $icons,
       '#block_heading' => $block_heading,
+      '#all_accounts_link_text' => $use_all_accounts_link ? $all_accounts_link_text : '',
+      '#all_accounts_link_url' => $use_all_accounts_link ? $all_accounts_link_url : '',
+      '#standalone_page_content' => $standalone_page_content,
       '#cache' => [
         'max-age' => 3600,
       ]
@@ -118,6 +128,13 @@ class UMDDSSocialIcons extends BlockBase {
       '#title' => t('Block Heading'),
       '#default_value' =>  !empty($config['block_heading']) ? $config['block_heading'] : null,
     ];
+
+    $form['standalone_page_content'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Use as a standalone page content'),
+      '#default_value' => !empty($config['standalone_page_content']) ? $config['standalone_page_content'] : 0,
+    ];
+
     $form['core_services'] = [
       '#type' => 'details',
       '#title' => t('Core Services'),
@@ -126,7 +143,6 @@ class UMDDSSocialIcons extends BlockBase {
     $form['core_services']['bluesky_url'] = [
       '#type' => 'textfield',
       '#title' => t('BlueSky URL'),
-      '#description' => t('Not yet implemented.'),
       '#default_value' =>  !empty($config['bluesky_url']) ? $config['bluesky_url'] : null,
     ];
     $form['core_services']['facebook_url'] = [
@@ -168,7 +184,6 @@ class UMDDSSocialIcons extends BlockBase {
     $form['alt_services']['threads_url'] = [
       '#type' => 'textfield',
       '#title' => t('Threads URL'),
-      '#description' => t('Not yet implemented.'),
       '#default_value' =>  !empty($config['threads_url']) ? $config['threads_url'] : null,
     ];
     $form['alt_services']['tumblr_url'] = [
@@ -182,6 +197,33 @@ class UMDDSSocialIcons extends BlockBase {
       '#default_value' =>  !empty($config['muskweb_url']) ? $config['muskweb_url'] : null,
       '#description' => t('Note that BlueSky or Mastadon offer similar functionality.'),
     ];
+
+     $form['use_all_accounts_link'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Show “All Social Accounts” link'),
+      '#default_value' => !empty($config['use_all_accounts_link']) ? $config['use_all_accounts_link'] : 0,
+    ];
+     $form['all_accounts_link_text'] = [
+       '#type' => 'textfield',
+       '#title' => t('All Social Accounts Link Text'),
+      '#default_value' =>  !empty($config['all_accounts_link_text']) ? $config['all_accounts_link_text'] : null,
+      '#states' => [
+        'visible' => [
+          ':input[name="settings[use_all_accounts_link]"]' => ['checked' => TRUE],
+        ],
+      ],
+     ];
+     $form['all_accounts_link_url'] = [
+       '#type' => 'textfield',
+       '#title' => t('All Social Accounts Link URL'),
+      '#default_value' =>  !empty($config['all_accounts_link_url']) ? $config['all_accounts_link_url'] : null,
+      '#states' => [
+        'visible' => [
+          ':input[name="settings[use_all_accounts_link]"]' => ['checked' => TRUE],
+        ],
+      ],
+     ];
+
     return $form;
   }
 
@@ -201,5 +243,9 @@ class UMDDSSocialIcons extends BlockBase {
     $this->setConfigurationValue('tumblr_url', $vals['alt_services']['tumblr_url']);
     $this->setConfigurationValue('threads_url', $vals['alt_services']['threads_url']);
     $this->setConfigurationValue('muskweb_url', $vals['alt_services']['muskweb_url']);
+    $this->setConfigurationValue('use_all_accounts_link', $form_state->getValue('use_all_accounts_link'));
+    $this->setConfigurationValue('all_accounts_link_text', $form_state->getValue('all_accounts_link_text'));
+    $this->setConfigurationValue('all_accounts_link_url', $form_state->getValue('all_accounts_link_url'));
+    $this->setConfigurationValue('standalone_page_content', $form_state->getValue('standalone_page_content'));
   }
 }

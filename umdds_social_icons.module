@@ -14,6 +14,9 @@ function umdds_social_icons_theme() {
       'variables' => [
         'icons' => '',
         'block_heading' => '',
+        'all_accounts_link_text' => '',
+        'all_accounts_link_url' => '',
+        'standalone_page_content' => '',
       ],
     ],
     'umdds_social_icons_facebook' => [

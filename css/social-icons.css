@@ -1,9 +1,19 @@
 /* Social Icons CSS */
+.social-media-content {
+  border-left: 1px solid #454545;
+}
+
+.standalone .social-media-content {
+  border-color: #e6e6e6;
+}
+
 .social-media-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
+
+  border-left: none !important;
 }
 
 ul.social-media-list li {

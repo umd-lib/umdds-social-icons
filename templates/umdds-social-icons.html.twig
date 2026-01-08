@@ -6,18 +6,39 @@
  * Variables:
  *   - icons
  *   - block_heading
+ *   - all_accounts_link_text
+ *   - all_accounts_link_url
  */
 #}
 {{ attach_library('umdds_social_icons/base') }}
-<div class="s-stack-large" aria-labelledby="block-heading-id">
-  <p id="block-heading-id" class="t-title-small c-content-dark-primary s-stack-medium">
-     {{ block_heading }} 
-  </p>
-  <ul class="social-media-list s-box-medium-h" aria-label="Social media links">
-    {% for icon in icons %}
-      <li class="s-stack-small">
-        {{ icon }}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+<nav class="s-stack-large {{ standalone_page_content ? 'standalone' : '' }}" aria-labelledby="block-heading-id">
+  {% if standalone_page_content %}
+    <p id="block-heading-id" class="t-title-small c-content-primary s-stack-small">
+      {{ block_heading }} 
+    </p>
+  {% else %}
+    <p id="block-heading-id" class="t-title-small c-content-dark-primary s-stack-medium">
+      {{ block_heading }} 
+    </p>
+  {% endif %}
+  <div class="social-media-content s-box-medium-h"s>
+    <ul class="social-media-list s-stack-small" aria-label="Social media links">
+      {% for icon in icons %}
+        <li class="s-stack-small">
+          {{ icon }}
+        </li>
+      {% endfor %}
+    </ul>
+    {% if all_accounts_link_text and all_accounts_link_url %}
+      {% if standalone_page_content %}
+        <a href="{{ all_accounts_link_url }}" class="t-body-small" target="_blank" rel="noopener">
+          {{ all_accounts_link_text }}
+        </a>
+      {% else %}
+        <a href="{{ all_accounts_link_url }}" class="ani-underline t-body-small c-underline-dark-primary" target="_blank" rel="noopener">
+          {{ all_accounts_link_text }}
+        </a>
+      {% endif %}
+    {% endif %}
+  </div>
+</nav>
