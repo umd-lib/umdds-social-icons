@@ -6,6 +6,10 @@ This Drupal module provides social media icons for the UMD Libraries'
 It is intended to fill the Single Directory Component Footer Social Media Icons
 slot but could be used elsewhere.
 
+Stable version: 2.0.0
+
+Development version: 3.x
+
 ## Installation Instructions
 
 Clone this repo into your modules/custom/ directory or install with composer:
