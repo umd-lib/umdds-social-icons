@@ -6,9 +6,11 @@ This Drupal module provides social media icons for the UMD Libraries'
 It is intended to fill the Single Directory Component Footer Social Media Icons
 slot but could be used elsewhere.
 
-Stable version: 2.0.0
+Stable version: 2.0.0 (main)
 
 Development version: 3.x
+
+[UMD Libraries Versioning Information](https://github.com/umd-lib/umd-drupal-core/tree/main)
 
 ## Installation Instructions
 
