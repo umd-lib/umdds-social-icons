@@ -54,6 +54,11 @@ function umdds_social_icons_theme() {
         'url' => '',
       ],
     ],
+    'umdds_social_icons_flickr' => [
+      'variables' => [
+        'url' => '',
+      ],
+    ],
     'umdds_social_icons_threads' => [
       'variables' => [
         'url' => '',
