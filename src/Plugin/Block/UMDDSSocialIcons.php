@@ -83,6 +83,13 @@ class UMDDSSocialIcons extends BlockBase {
       ];
       $icons[] = \Drupal::service('renderer')->render($render_arr);
     }
+    if (!empty($blockConfig['flickr_url'])) {
+      $render_arr = [
+        '#theme' => 'umdds_social_icons_flickr',
+        '#url' => $blockConfig['flickr_url'],
+      ];
+      $icons[] = \Drupal::service('renderer')->render($render_arr);
+    }
     if (!empty($blockConfig['youtube_url'])) {
       $render_arr = [
         '#theme' => 'umdds_social_icons_youtube',
@@ -170,6 +177,11 @@ class UMDDSSocialIcons extends BlockBase {
       '#title' => t('Wordpress URL'),
       '#default_value' =>  !empty($config['wordpress_url']) ? $config['wordpress_url'] : null,
     ];
+    $form['core_services']['flickr_url'] = [
+      '#type' => 'textfield',
+      '#title' => t('Flickr URL'),
+      '#default_value' =>  !empty($config['flickr_url']) ? $config['flickr_url'] : null,
+    ];
     $form['core_services']['youtube_url'] = [
       '#type' => 'textfield',
       '#title' => t('YouTube URL'),
@@ -235,6 +247,7 @@ class UMDDSSocialIcons extends BlockBase {
     $this->setConfigurationValue('block_heading', $form_state->getValue('block_heading'));
     $this->setConfigurationValue('pinterest_url', $vals['core_services']['pinterest_url']);
     $this->setConfigurationValue('wordpress_url', $vals['core_services']['wordpress_url']);
+    $this->setConfigurationValue('flickr_url', $vals['core_services']['flickr_url']);
     $this->setConfigurationValue('youtube_url', $vals['core_services']['youtube_url']);
     $this->setConfigurationValue('facebook_url', $vals['core_services']['facebook_url']);
     $this->setConfigurationValue('instagram_url', $vals['core_services']['instagram_url']);
